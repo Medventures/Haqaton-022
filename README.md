@@ -151,11 +151,36 @@ cd Haqaton-022
 Скрипт проверит версии Python и Node, установит зависимости, создаст `.env`
 из шаблона, предложит освободить занятые порты и дождётся готовности сервисов.
 
-Если нужно поставить зависимости вручную:
+### Windows
+
+`start.sh` — bash-скрипт, в PowerShell он не работает. Либо запускать его через
+**Git Bash**, либо поднять сервисы вручную в двух терминалах.
+
+Терминал 1, бэкенд:
+
+```powershell
+cd backend
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -m uvicorn app.main:app --port 8000
+```
+
+Терминал 2, фронтенд:
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+Если `python` не найден — попробуйте `py`. Форма `python.exe -m uvicorn` выбрана
+намеренно: она работает и когда обёртка `uvicorn.exe` не создалась.
+
+### Установка зависимостей вручную (macOS и Linux)
 
 ```bash
 python3 -m venv backend/.venv
-backend/.venv/bin/pip install fastapi uvicorn[standard] openai pydantic python-multipart
+backend/.venv/bin/pip install -r backend/requirements.txt
 cd frontend && npm install && cd ..
 ```
 
