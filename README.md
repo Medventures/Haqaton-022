@@ -97,17 +97,8 @@ ItemBound = create_model("CasePlanItemBound", __base__=CasePlanItem,
 
 ## Демо
 
-Приложение запускается локально (см. раздел «Запуск»), вход под демонстрационными
-учётными записями.
-
-| Экран | |
-|---|---|
-| Вход | ![Вход](docs/screenshots/1-login.png) |
-| Адаптивное интервью | ![Интервью](docs/screenshots/3-interview.png) |
-| План глазами родителя | ![План родителя](docs/screenshots/4-parent-plan.png) |
-| Панель куратора | ![Панель куратора](docs/screenshots/5-curator-dashboard.png) |
-| Карточка кейса | ![Карточка кейса](docs/screenshots/6-curator-case.png) |
-| Справочник организаций | ![Справочник](docs/screenshots/7-facilities.png) |
+Приложение запускается локально — см. раздел «Запуск». Вход под демонстрационными
+учётными записями, данные синтетические.
 
 ### Учётные записи
 
@@ -253,8 +244,6 @@ frontend/
   lib/
     api.ts                клиент API
     i18n.ts               русский, казахский, английский
-
-docs/screenshots/         снимки экранов для этого README
 ```
 
 ### Стек
