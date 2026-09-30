@@ -1,10 +1,39 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp
+
+# Env / secrets
 .env
 .env.*
 !.env.example
-node_modules/
-venv/
+*.pem
+*.key
+
+# Python
 .venv/
 __pycache__/
 *.py[cod]
-.DS_Store
-Thumbs.db
+*.db
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+build/
+next-env.d.ts
+
+# Logs
+*.log
+logs/
+
+# Claude Code
+.claude/settings.local.json
+
+# Загруженные документы
+backend/uploads/
