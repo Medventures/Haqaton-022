@@ -137,19 +137,34 @@ ItemBound = create_model("CasePlanItemBound", __base__=CasePlanItem,
 
 ### Требования
 
-- **Python 3.11+**
-- **Node.js 20+**
-- Ключ OpenAI — необязателен: без него работает демонстрационный режим
+Поставить нужно только две вещи — остальное скрипт установит сам.
 
-### Установка
+| Требуется | macOS | Windows и Linux |
+|---|---|---|
+| Python 3.11+ | `brew install python@3.12` | [python.org/downloads](https://www.python.org/downloads/) · `sudo apt install python3 python3-venv` |
+| Node.js 20+ | `brew install node` | [nodejs.org](https://nodejs.org) · `sudo apt install nodejs npm` |
+
+Ключ OpenAI не обязателен: без него приложение работает в демонстрационном режиме.
+
+### Установка и запуск
 
 ```bash
 git clone https://github.com/Medventures/Haqaton-022.git
 cd Haqaton-022
+./start.sh
+```
 
+Первый запуск занимает 3–5 минут — ставятся зависимости. Браузер откроется сам
+на http://localhost:3000
+
+Скрипт проверит версии Python и Node, установит зависимости, создаст `.env`
+из шаблона, предложит освободить занятые порты и дождётся готовности сервисов.
+
+Если нужно поставить зависимости вручную:
+
+```bash
 python3 -m venv backend/.venv
 backend/.venv/bin/pip install fastapi uvicorn[standard] openai pydantic python-multipart
-
 cd frontend && npm install && cd ..
 ```
 
